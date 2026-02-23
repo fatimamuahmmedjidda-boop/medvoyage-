@@ -1,0 +1,1110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MedVoyage - Premium Medical Tourism in Egypt</title>
+    <meta name="description" content="MedVoyage - International Medical Tourism Company connecting African patients with world-class healthcare in Egypt.">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-blue: #4F5FC4;
+            --accent-aqua: #60FBDA;
+            --cta-orange: #FF7A00;
+            --white: #ffffff;
+            --light-bg: #F8FCFF;
+            --text-dark: #1a1a1a;
+            --text-gray: #666;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+
+        /* WhatsApp Float */
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 25px;
+            right: 25px;
+            background: #25d366;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+            z-index: 1000;
+            text-decoration: none;
+            transition: transform 0.3s;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+            z-index: 999;
+            padding: 1rem 0;
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 3rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-img {
+            height: 50px;
+            width: auto;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-blue);
+        }
+
+        .cta-button {
+            background: var(--cta-orange);
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(255, 122, 0, 0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 122, 0, 0.4);
+        }
+
+        /* Hero */
+        .hero {
+            margin-top: 80px;
+            padding: 100px 3rem;
+            background: linear-gradient(135deg, rgba(79, 95, 196, 0.05), rgba(96, 251, 218, 0.05));
+        }
+
+        .hero-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            color: var(--primary-blue);
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .hero-content h1 span {
+            background: linear-gradient(135deg, var(--accent-aqua), var(--primary-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            color: var(--text-gray);
+            margin-bottom: 2.5rem;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .btn-primary {
+            background: var(--cta-orange);
+            color: white;
+            padding: 1.2rem 2.5rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(255, 122, 0, 0.4);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: var(--primary-blue);
+            padding: 1.2rem 2.5rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            border: 2px solid var(--primary-blue);
+            transition: all 0.3s;
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary-blue);
+            color: white;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+        }
+
+        /* Section Spacing */
+        section {
+            padding: 100px 3rem;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 4rem;
+        }
+
+        .section-header h2 {
+            font-size: 3rem;
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            font-size: 1.15rem;
+            color: var(--text-gray);
+        }
+
+        /* About */
+        .about {
+            background: white;
+        }
+
+        .about-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            border-radius: 20px;
+            box-shadow: 0 15px 50px rgba(0,0,0,0.1);
+        }
+
+        .about-content h3 {
+            font-size: 2.2rem;
+            color: var(--primary-blue);
+            margin-bottom: 1.5rem;
+        }
+
+        .about-content p {
+            color: var(--text-gray);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .mission-vision {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .mv-card {
+            background: linear-gradient(135deg, rgba(96, 251, 218, 0.08), rgba(79, 95, 196, 0.08));
+            padding: 1.5rem;
+            border-radius: 15px;
+            border-left: 4px solid var(--accent-aqua);
+        }
+
+        .mv-card h4 {
+            color: var(--primary-blue);
+            margin-bottom: 0.8rem;
+            font-size: 1.3rem;
+        }
+
+        /* Services */
+        .services {
+            background: var(--light-bg);
+        }
+
+        .services-carousel-wrapper {
+            max-width: 1400px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+            padding: 0 60px;
+        }
+
+        .services-carousel {
+            display: flex;
+            gap: 2rem;
+            transition: transform 0.5s ease;
+        }
+
+        .service-card {
+            flex: 0 0 calc(33.333% - 1.5rem);
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            transition: transform 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .service-image {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+
+        .service-content {
+            padding: 2rem;
+        }
+
+        .service-content h3 {
+            font-size: 1.5rem;
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+        }
+
+        .service-content p {
+            color: var(--text-gray);
+            line-height: 1.7;
+        }
+
+        .carousel-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 45px;
+            height: 45px;
+            background: white;
+            border: 2px solid var(--primary-blue);
+            color: var(--primary-blue);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s;
+            z-index: 10;
+        }
+
+        .carousel-nav:hover {
+            background: var(--primary-blue);
+            color: white;
+        }
+
+        .carousel-prev { left: 0; }
+        .carousel-next { right: 0; }
+
+        /* CEO */
+        .ceo-section {
+            background: white;
+        }
+
+        .ceo-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .ceo-image-wrapper {
+            width: 300px;
+            height: 300px;
+            margin: 0 auto 2rem;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 15px 50px rgba(0,0,0,0.15);
+        }
+
+        .ceo-image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .ceo-name {
+            font-size: 2.5rem;
+            color: var(--primary-blue);
+            margin-bottom: 0.5rem;
+        }
+
+        .ceo-title {
+            color: var(--cta-orange);
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
+        }
+
+        .ceo-content {
+            max-width: 900px;
+            margin: 0 auto 3rem;
+        }
+
+        .ceo-content p {
+            color: var(--text-gray);
+            line-height: 1.9;
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        .ceo-social {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .social-icon {
+            width: 50px;
+            height: 50px;
+            background: white;
+            border: 2px solid var(--primary-blue);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-blue);
+            font-size: 1.4rem;
+            transition: all 0.3s;
+            text-decoration: none;
+        }
+
+        .social-icon:hover {
+            background: var(--primary-blue);
+            color: white;
+            transform: translateY(-5px);
+        }
+
+        /* Testimonials */
+        .testimonials {
+            background: var(--light-bg);
+        }
+
+        .testimonials-carousel-wrapper {
+            max-width: 1400px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+            padding: 0 60px;
+        }
+
+        .testimonials-carousel {
+            display: flex;
+            gap: 2.5rem;
+            transition: transform 0.5s ease;
+        }
+
+        .testimonial-card {
+            flex: 0 0 calc(33.333% - 2rem);
+            background: white;
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.06);
+        }
+
+        .stars {
+            color: #FFB800;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+
+        .testimonial-card p {
+            color: var(--text-gray);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .author-avatar {
+            width: 55px;
+            height: 55px;
+            background: linear-gradient(135deg, var(--accent-aqua), var(--primary-blue));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        .author-info h4 {
+            color: var(--primary-blue);
+            font-weight: 600;
+        }
+
+        .author-info p {
+            color: #888;
+            font-size: 0.9rem;
+            margin: 0;
+            font-style: normal;
+        }
+
+        /* Contact */
+        .contact {
+            background: white;
+        }
+
+        .contact-container {
+            max-width: 700px;
+            margin: 0 auto;
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 15px 50px rgba(0,0,0,0.08);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            color: var(--primary-blue);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-family: 'Inter', sans-serif;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-blue);
+        }
+
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            width: 100%;
+            background: var(--cta-orange);
+            color: white;
+            padding: 1.2rem;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(255, 122, 0, 0.3);
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, var(--accent-aqua), var(--primary-blue));
+            color: white;
+            padding: 4rem 3rem 2rem;
+        }
+
+        .footer-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-logo {
+            height: 50px;
+            margin-bottom: 1rem;
+            filter: brightness(0) invert(1);
+        }
+
+        .footer-about h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-about p {
+            opacity: 0.95;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-social a {
+            width: 45px;
+            height: 45px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.3rem;
+            transition: all 0.3s;
+            text-decoration: none;
+        }
+
+        .footer-social a:hover {
+            background: white;
+            color: var(--primary-blue);
+        }
+
+        .footer-links h4 {
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links ul li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-links ul li a {
+            color: rgba(255,255,255,0.9);
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .footer-links ul li a:hover {
+            color: white;
+            padding-left: 5px;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.2);
+            padding-top: 2rem;
+            text-align: center;
+            opacity: 0.9;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .hero-container,
+            .about-container {
+                grid-template-columns: 1fr;
+            }
+
+            .service-card {
+                flex: 0 0 calc(50% - 1rem);
+            }
+
+            .testimonial-card {
+                flex: 0 0 calc(50% - 1.25rem);
+            }
+
+            .footer-container {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .section-header h2 {
+                font-size: 2.2rem;
+            }
+
+            .service-card,
+            .testimonial-card {
+                flex: 0 0 100%;
+            }
+
+            .footer-container {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 80px 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="https://wa.me/201116537396" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <nav>
+        <div class="nav-container">
+            <img src="assets/images/logo/logo.png" alt="MedVoyage" class="logo-img">
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#ceo">CEO</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a class="cta-button" href="https://wa.me/201116537396">Book Consultation</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1>Your Gateway to <span>World-Class Healthcare</span> in Egypt</h1>
+                <p>Experience premium medical tourism with MedVoyage. We connect international patients with Egypt's finest hospitals, offering affordable excellence and seamless travel coordination.</p>
+                <div class="hero-buttons">
+                    <a href="https://wa.me/201116537396" class="btn-primary">
+                        <i class="fab fa-whatsapp"></i> Start Your Journey
+                    </a>
+                    <a href="#services" class="btn-secondary">Explore Services</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="assets/images/general/hero.jpg" alt="Medical Tourism Egypt">
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="section-header">
+            <h2>About MedVoyage</h2>
+            <p>Leading International Medical Tourism Company Based in Egypt</p>
+        </div>
+        <div class="about-container">
+            <div class="about-image">
+                <img src="assets/images/general/about.jpg" alt="Cairo Egypt">
+            </div>
+            <div class="about-content">
+                <h3>Connecting Global Patients with Egyptian Medical Excellence</h3>
+                <p>MedVoyage is Egypt's premier medical tourism company, dedicated to serving African and global patients seeking world-class healthcare solutions. We specialize in coordinating comprehensive medical travel experiences with internationally accredited hospitals throughout Egypt.</p>
+                <p>From initial consultation to post-treatment follow-up, we provide seamless patient assistance including visa support, travel arrangements, accommodation, and 24/7 care coordination.</p>
+                
+                <div class="mission-vision">
+                    <div class="mv-card">
+                        <h4><i class="fas fa-bullseye"></i> Our Mission</h4>
+                        <p>To provide seamless access to world-class medical care in Egypt through personalized service and transparent pricing.</p>
+                    </div>
+                    <div class="mv-card">
+                        <h4><i class="fas fa-eye"></i> Our Vision</h4>
+                        <p>To become Africa's most trusted medical tourism partner through exceptional healthcare experiences.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="services">
+        <div class="section-header">
+            <h2>Our Services</h2>
+            <p>End-to-end coordination for your medical journey in Egypt</p>
+        </div>
+        <div class="services-carousel-wrapper">
+            <button class="carousel-nav carousel-prev" onclick="moveCarousel('services', -1)">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <div class="services-carousel" id="servicesCarousel">
+                <div class="service-card">
+                    <img src="assets/images/services/visa.jpg" class="service-image" alt="Visa on Arrival">
+                    <div class="service-content">
+                        <h3>Visa on Arrival</h3>
+                        <p>Complete visa processing support with documentation assistance and expedited services for medical travelers to Egypt.</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <img src="assets/images/services/consultation.jpg" class="service-image" alt="Medical Consultation">
+                    <div class="service-content">
+                        <h3>Medical Consultation</h3>
+                        <p>Virtual and in-person consultations with Egyptian specialists and treatment plan reviews.</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <img src="assets/images/services/hospital.jpg" class="service-image" alt="Hospital Booking">
+                    <div class="service-content">
+                        <h3>Hospital Booking</h3>
+                        <p>Direct appointments at top Egyptian hospitals with verified specialists and pre-admission coordination.</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <img src="assets/images/services/accommodation.jpg" class="service-image" alt="Accommodation">
+                    <div class="service-content">
+                        <h3>Accommodation</h3>
+                        <p>Premium hotels and recovery suites near medical facilities with dietary and mobility support.</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <img src="assets/images/services/airport.jpg" class="service-image" alt="Airport Pickup">
+                    <div class="service-content">
+                        <h3>Airport Pickup</h3>
+                        <p>Private transfers from Cairo International Airport with meet-and-greet services.</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <img src="assets/images/services/translation.jpg" class="service-image" alt="Translation">
+                    <div class="service-content">
+                        <h3>Translation Services</h3>
+                        <p>Professional medical interpreters fluent in multiple languages for clear communication.</p>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-nav carousel-next" onclick="moveCarousel('services', 1)">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+    </section>
+
+    <section id="ceo" class="ceo-section">
+        <div class="section-header">
+            <h2>Meet Our Founder & CEO</h2>
+            <p>Leadership dedicated to transforming medical tourism in Egypt</p>
+        </div>
+        <div class="ceo-container">
+            <div class="ceo-image-wrapper">
+                <img src="assets/images/ceo/ceo.jpg" alt="Fatima Mohammed Jidda">
+            </div>
+            <div class="ceo-name">Fatima Mohammed Jidda</div>
+            <div class="ceo-title">Founder & Executive Director</div>
+            
+            <div class="ceo-content">
+                <p><strong>Welcome to MedVoyage.</strong> With over four years of experience in international healthcare coordination, Fatima founded MedVoyage with a clear vision — to make Egypt a world-class medical destination for patients across Africa and beyond.</p>
+                <p>Fatima Mohammed is passionate about connecting African patients with trusted hospitals and specialists in Egypt. Through MedVoyage, she focuses on simplifying the medical travel journey with personalized coordination and professional support.</p>
+            </div>
+
+            <div class="ceo-social">
+                <a href="https://www.facebook.com/fatima.muhammadjidda.37" target="_blank" title="Facebook">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://www.instagram.com/Fatima_m_jidda" target="_blank" title="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://www.tiktok.com/@Fatima_m_jidda" target="_blank" title="TikTok">
+                    <i class="fab fa-tiktok"></i>
+                </a>
+                <a href="https://www.snapchat.com/add/fatima_mjidda" target="_blank" title="Snapchat">
+                    <i class="fab fa-snapchat-ghost"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/fatima-m-jidda-a59221232/" target="_blank" title="LinkedIn">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonials" class="testimonials">
+        <div class="section-header">
+            <h2>Patient Success Stories</h2>
+            <p>Real experiences from African patients who trusted MedVoyage</p>
+        </div>
+        <div class="testimonials-carousel-wrapper">
+            <button class="carousel-nav carousel-prev" onclick="moveCarousel('testimonials', -1)">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <div class="testimonials-carousel" id="testimonialsCarousel">
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p>"MedVoyage coordinated my treatment perfectly. The hospital care was excellent and the team supported me throughout my entire journey. Highly professional service."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">AM</div>
+                        <div class="author-info">
+                            <h4>Amina Mohammed</h4>
+                            <p>Nigeria</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p>"From visa to recovery, everything was handled professionally. The doctors were highly skilled and I felt safe throughout my medical journey in Egypt."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">DK</div>
+                        <div class="author-info">
+                            <h4>David Kamau</h4>
+                            <p>South Africa</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p>"MedVoyage made my medical travel stress-free. The coordination was seamless and I received world-class treatment at affordable costs. Excellent service."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">FD</div>
+                        <div class="author-info">
+                            <h4>Fatou Diop</h4>
+                            <p>Senegal</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p>"The personal support and translation services were invaluable. MedVoyage coordinated everything professionally and I'm very satisfied with my treatment results."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">SA</div>
+                        <div class="author-info">
+                            <h4>Sarah Asante</h4>
+                            <p>Ghana</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-nav carousel-next" onclick="moveCarousel('testimonials', 1)">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="section-header">
+            <h2>Start Your Medical Journey</h2>
+            <p>Book your free consultation with MedVoyage today</p>
+        </div>
+        <div class="contact-container">
+            <form id="contactForm">
+                <div class="form-group">
+                    <label for="name">Full Name *</label>
+                    <input type="text" id="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number *</label>
+                    <input type="tel" id="phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="country">Country *</label>
+                    <select id="country" required>
+                        <option value="">Select your country</option>
+                        <option value="Nigeria">Nigeria</option>
+                        <option value="South Africa">South Africa</option>
+                        <option value="Kenya">Kenya</option>
+                        <option value="Ghana">Ghana</option>
+                        <option value="Tanzania">Tanzania</option>
+                        <option value="Uganda">Uganda</option>
+                        <option value="Ethiopia">Ethiopia</option>
+                        <option value="Senegal">Senegal</option>
+                        <option value="Sudan">Sudan</option>
+                        <option value="Chad">Chad</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="service">Service Interested In *</label>
+                    <select id="service" required>
+                        <option value="">Select a service</option>
+                        <option value="Visa on Arrival">Visa on Arrival</option>
+                        <option value="Medical Consultation">Medical Consultation</option>
+                        <option value="Hospital Booking">Hospital Booking</option>
+                        <option value="Accommodation">Accommodation</option>
+                        <option value="Airport Pickup">Airport Pickup</option>
+                        <option value="Translation Services">Translation Services</option>
+                        <option value="Free Doctor Consultation">Free Doctor Consultation</option>
+                        <option value="Immediate Doctor Coordination">Immediate Doctor Coordination</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" placeholder="Tell us about your medical needs..."></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-about">
+                <img src="assets/images/logo/logo.png" alt="MedVoyage" class="footer-logo">
+                <h3>MedVoyage</h3>
+                <p>Egypt's leading medical tourism company, connecting international patients with world-class healthcare.</p>
+                <div class="footer-social">
+                    <a href="https://www.facebook.com/Medvoyage.net" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/medv.oyage.me/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.tiktok.com/@medv.oyage.me" target="_blank"><i class="fab fa-tiktok"></i></a>
+                    <a href="https://wa.me/201116537396" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#ceo">CEO</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="#services">Visa Assistance</a></li>
+                    <li><a href="#services">Medical Consultation</a></li>
+                    <li><a href="#services">Hospital Booking</a></li>
+                    <li><a href="#services">Accommodation</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Contact</h4>
+                <ul>
+                    <li><a href="tel:+201116537396"><i class="fas fa-phone"></i> +20 111 653 7396</a></li>
+                    <li><a href="mailto:info@medvoyage.me"><i class="fas fa-envelope"></i> info@medvoyage.me</a></li>
+                    <li><a href="https://wa.me/201116537396"><i class="fab fa-whatsapp"></i> WhatsApp</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 MedVoyage — All Rights Reserved | Design by Niado Global Services</p>
+        </div>
+    </footer>
+
+    <script>
+        let currentSlide = { services: 0, testimonials: 0 };
+
+        function moveCarousel(type, direction) {
+            const carousel = document.getElementById(type + 'Carousel');
+            const cards = carousel.children;
+            const totalSlides = cards.length;
+            const cardsPerView = window.innerWidth <= 768 ? 1 : window.innerWidth <= 1024 ? 2 : 3;
+            const maxSlide = Math.max(0, totalSlides - cardsPerView);
+
+            currentSlide[type] = Math.max(0, Math.min(maxSlide, currentSlide[type] + direction));
+
+            const cardWidth = cards[0].offsetWidth;
+            const gap = 32;
+            const offset = currentSlide[type] * (cardWidth + gap);
+            carousel.style.transform = `translateX(-${offset}px)`;
+        }
+
+        function startAutoSlide() {
+            setInterval(() => {
+                const servicesCarousel = document.getElementById('servicesCarousel');
+                const testimonialsCar ousel = document.getElementById('testimonialsCarousel');
+                
+                if (servicesCarousel && servicesCarousel.children.length > 3) {
+                    moveCarousel('services', 1);
+                    if (currentSlide.services >= servicesCarousel.children.length - 3) {
+                        currentSlide.services = -1;
+                    }
+                }
+
+                if (testimonialsCarousel && testimonialsCarousel.children.length > 3) {
+                    moveCarousel('testimonials', 1);
+                    if (currentSlide.testimonials >= testimonialsCarousel.children.length - 3) {
+                        currentSlide.testimonials = -1;
+                    }
+                }
+            }, 4000);
+        }
+
+        document.addEventListener('DOMContentLoaded', startAutoSlide);
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const offset = 80;
+                    const targetPosition = target.offsetTop - offset;
+                    window.scrollTo({ top: targetPosition, behavior: 'smooth' });
+                }
+            });
+        });
+
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you! We will contact you within 24 hours.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
